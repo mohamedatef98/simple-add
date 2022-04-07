@@ -1,0 +1,23 @@
+<head>
+  <title>simple-add</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <div class="hello">
+    {{> insertColorForm}}
+  </div>
+  <ul>
+    {{#each colors}}
+    <li>{{color}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="insertColorForm">
+  {{>quickForm collection=colorsCollection id="insertColorForm" type="method" meteormethod="add"}}
+</template>
